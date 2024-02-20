@@ -13,11 +13,11 @@ const saltRounds = 10;
 env.config();
 
 const db = new pg.Client({
-  user: 'postgres',
+  user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  host: 'localhost',
-  port: 5432
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT
 })
 db.connect();
 
